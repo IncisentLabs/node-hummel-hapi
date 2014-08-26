@@ -1,0 +1,12 @@
+{
+    "DEFAULT": {
+        "port": 8002,
+        "logging": {
+            "level": "info",
+            "path": "logs/server.log"
+        }
+    },
+    "DEV": {
+        "foo": "baz"
+    }
+}

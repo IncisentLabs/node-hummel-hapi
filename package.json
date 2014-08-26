@@ -1,0 +1,21 @@
+{
+  "name": "node-hummel-hapi",
+  "version": "0.0.1",
+  "description": "Hapi integration with Hummel",
+  "main": "index.js",
+  "peerDependencies": {
+    "hapi": "^6.6.0"
+  },
+  "dependencies": {
+    "hummel": "^0.3.0",
+    "lodash-node": "^2.4.1"
+  },
+  "devDependencies": {
+    "hapi": "^6.6.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Larry Myers <larry@larrymyers.com>",
+  "license": "MIT"
+}
