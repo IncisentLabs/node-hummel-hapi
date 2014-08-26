@@ -1,5 +1,5 @@
 {
-  "name": "node-hummel-hapi",
+  "name": "hummel-hapi",
   "version": "0.0.1",
   "description": "Hapi integration with Hummel",
   "main": "index.js",
