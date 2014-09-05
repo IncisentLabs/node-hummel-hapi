@@ -10,7 +10,7 @@ module.exports = {
     createServer: function(opts) {
         var serverOpts = hummel.getOptions(opts),
             port = serverOpts.port || settings.port,
-            server = new Hapi.Server(port, { debug: { request: false }});
+            server = new Hapi.Server(port, { cors: serverOpts.cors, debug: { request: false }});
 
         server.route({
             method: 'GET',
@@ -24,7 +24,11 @@ module.exports = {
             var response = request.response;
 
             if (response.isBoom && response.output.status === 500) {
-                return reply('<h1>An Unexpected Error Occurred.</h1>').type('text/html');
+                if (settings.errorPage) {
+                    return reply.file(settings.errorPage);
+                } else {
+                    return reply('<h1>An Unexpected Error Occurred.</h1>').type('text/html');
+                }
             }
 
             return reply();

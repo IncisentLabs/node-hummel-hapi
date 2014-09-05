@@ -1,6 +1,4 @@
-var createServer = require('../index').createServer;
-
-var server = createServer();
+var server = require('../index').createServer();
 
 server.route({
     method: 'GET',
