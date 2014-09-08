@@ -1,4 +1,4 @@
-var server = require('../index').createServer();
+var server = require('../index').createServer({ router: { stripTrailingSlash: true } });
 
 server.route({
     method: 'GET',

@@ -3,14 +3,23 @@ var cluster = require('cluster'),
     hummel = require('hummel'),
     settings = hummel.getSettings(),
     log = hummel.getLogger(),
-    _reduce = require('lodash-node/modern/collections/reduce');
+    _reduce = require('lodash-node/modern/collections/reduce'),
+    _defaults = require('lodash-node/modern/objects/defaults'),
+    _pick = require('lodash-node/modern/objects/pick');
+
+var ValidHapiOpts = ['app', 'cache', 'cors', 'security', 'debug', 'files', 'json', 'labels',
+    'load', 'location', 'payload', 'plugins', 'router', 'state', 'timeout', 'tls', 'maxSockets',
+    'validation', 'views'];
 
 module.exports = {
 
     createServer: function(opts) {
+        opts = opts || {};
+
         var serverOpts = hummel.getOptions(opts),
+            hapiOpts = _defaults(_pick(opts, ValidHapiOpts), { debug: { request: false } }),
             port = serverOpts.port || settings.port,
-            server = new Hapi.Server(port, { cors: serverOpts.cors, debug: { request: false }});
+            server = new Hapi.Server(port, hapiOpts);
 
         server.route({
             method: 'GET',
