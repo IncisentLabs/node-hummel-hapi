@@ -1,6 +1,6 @@
 {
   "name": "hummel-hapi",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "description": "Hapi integration with Hummel",
   "main": "index.js",
   "files": [

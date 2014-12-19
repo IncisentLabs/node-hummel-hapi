@@ -24,6 +24,9 @@ module.exports = {
         server.route({
             method: 'GET',
             path: '/healthcheck',
+            config: {
+                auth: false
+            },
             handler: function(request, reply) {
                 reply('OK').type('text/plain');
             }
