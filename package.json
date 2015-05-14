@@ -1,6 +1,6 @@
 {
   "name": "hummel-hapi",
-  "version": "0.5.3",
+  "version": "0.5.4",
   "description": "Hapi integration with Hummel",
   "main": "index.js",
   "files": [
@@ -11,7 +11,7 @@
     "hapi": "^6.6.0"
   },
   "dependencies": {
-    "hummel": "^0.5.0",
+    "hummel": "^0.6.0",
     "lodash-node": "^2.4.1"
   },
   "devDependencies": {
