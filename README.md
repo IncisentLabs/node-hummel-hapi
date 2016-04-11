@@ -24,3 +24,12 @@ The Hapi debug console logging is disable and piped through bunyan instead.
     });
 
     server.run();
+
+## Versions
+
+0.6.0
+
+    hapi: 6.6.0 => 13.0.0
+    lodash-node: 2.4.1 => 3.10.2
+
+
